@@ -4,10 +4,58 @@ import React, { useState,useEffect} from "react";
 import AddIcon from "@material-ui/icons/Add";
 import axios from "axios";  //Allows us to make requests to server (or any endpoint).Has then() function for easier error handling and alternate for callback functions. 
 import Note from "./Note";
+import alanBtn from "@alan-ai/alan-sdk-web";
 
 
+let alanStatus=false;
 function CreateArea(props) {
 
+  
+
+  // Adding the Alan button
+  useEffect(() => {
+    
+    if(!alanStatus){
+      alanStatus=true
+       alanBtn({
+        key: 'ALAN_AI_KEY',
+        onCommand: (commandData) => {
+                          
+                let VoiceTitle=commandData.data[1];
+                let CapitalizedTitle;
+                if(VoiceTitle){   //To make sure we dont perform string operation on undefined string.
+                CapitalizedTitle=VoiceTitle[0].toUpperCase()+VoiceTitle.substring(1)
+                }
+                let VoiceContent=commandData.data[0];
+                let CapitalizedContent=VoiceContent[0].toUpperCase()+VoiceContent.substring(1)
+                console.log(VoiceContent)
+                axios({
+                  url: 'http://localhost:4000/save',
+                  method: 'POST',
+                  data: {     //Data to sent to the server
+                    username:globalVar,
+                    newnote:{
+                      title:CapitalizedTitle,
+                      content:CapitalizedContent
+                    }   
+                  }
+                }).then(response => {
+                  if(response.data.saved){  //If data is saved
+                    console.log("Saved");
+    
+                    getdata();   //Again render all the data for that user in the website
+                  }
+                })
+        
+        
+              }
+              
+    });
+  }
+}, []);
+
+
+  
   const globalVar = localStorage.getItem("name");
 
   ////Having a State for all the notes of a user and a hook function for updating it.
@@ -98,7 +146,9 @@ function CreateArea(props) {
   }
 
   return (
+
     <div className="div-form" >
+    
       <form className="create-note" >
         {state && (     //If state is true (i.e, form's textArea is clicked) then execute what is after &&
           <input

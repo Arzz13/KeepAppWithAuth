@@ -176,11 +176,19 @@ footer p {
 }
 
 .signuphead h3{
-  margin-top: 4cm;
+  margin-top: 40px;
 }
+
+ .signuphead h4{
+  margin-top: 20px;
+  font-family: "McLaren";
+  font-weight: 200;
+  font-size:2rem;
+}
+
 .signuphead h5{
   margin-top: 1cm;
-
+  padding-bottom: 50px;
 }
 
 .center{
@@ -273,7 +281,7 @@ a[href*="#"]:hover {
 }
 
 /* ------------------For small devices--------------------------- */
-
+/*
 @media (max-width :720px){
 
   .login{
@@ -281,6 +289,7 @@ a[href*="#"]:hover {
     float:none;
     display:block;
     font-size: 4rem;
+    position: fixed;
   }
 
   .signuphead{
@@ -288,15 +297,16 @@ a[href*="#"]:hover {
     float:none;
     display:block;
     padding-top: 2rem;
+    position: absolute;
   }
 
-  .vertical {     /*Disapper the vertical line in smaller devices.*/
+  .vertical {     Disapper the vertical line in smaller devices.
     height: 0px;
     border-left: 0px ;
     left:0%;
   }
 }
-
+*/
 
 /* ------------------For even smaller devices--------------------------- */
 @media (max-width :425px) {
@@ -308,16 +318,50 @@ a[href*="#"]:hover {
   .login{
     width:100%;
     font-size: 4rem;
+    
   }
 
   .signuphead{
     width:100%;
+    
   }
-
+/*------------*/
   .signuphead h1{
-    padding-top: 8rem;  
+    color: #fff;
+    text-align: center;
+    padding-top: 2rem;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+    font-size:6rem;
+    
+  }
+  
+  .signuphead h3{
+    margin-top: 1cm;
+    font-size: large;
   }
 
+  .signuphead h4{
+   
+    font-family: "McLaren";
+    font-weight: 200;
+    font-size:2rem;
+  }
+  .signuphead h5{
+    margin-top: 1cm;
+    font-size: large;
+  }
+
+  .login{
+    padding-top: 8rem;
+    margin-top: 10rem;
+  }
+  .login h1{
+    font-size: larger;
+  }
+
+
+/*------------*/
   .center{
     text-align: center;
     color:white;
@@ -344,7 +388,7 @@ a[href*="#"]:hover {
     display: block;
     text-align: center;
     font-size: 3rem;
-    color: white;
+    color: #65393A;
     font-weight: 300;
     outline: white;
   }
@@ -363,7 +407,7 @@ a[href*="#"]:hover {
     font-weight: bold;
   }
   .login ::placeholder{
-    color:white;
+    color:#65393A;
   }
   
  
@@ -399,6 +443,17 @@ a[href*="#"]:hover {
 }
 
 }
+
+
+
+
+
+
+
+  
+
+
+
 
 
 

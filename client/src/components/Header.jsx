@@ -4,7 +4,10 @@ import {useNavigate} from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
-  const navigateTo = () => navigate('/');
+  const navigateTo = () => {
+    
+    navigate('/');
+  }
   return (
     <header>
       {/* <HighlightIcon

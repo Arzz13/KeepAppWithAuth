@@ -6,8 +6,10 @@ export default function Signuphead(){
     return( 
         <div className="signuphead" >
           <h1 style={{color:"#65393A"}}> Keep it here  </h1>
-          <div className="center">
-          <WbIncandescentIcon style={{width:"30%",height:"auto", fill:"65393A",marginTop:"2cm"}} />
+          
+          <div className="center" style={{marginTop:"10rem"}}>
+          <h4 class="signuphead-text" style={{color:"#65393A"}}>AI powered app to store your stuffs</h4>
+          <WbIncandescentIcon style={{width:"30%",height:"auto", fill:"#65393A",marginTop:"2cm"}} />
           
           <h3 class="signuphead-text" style={{color:"#65393A"}}>  A part of your everyday life  </h3>
           <h5 class="signuphead-text" style={{color:"#65393A"}}> Never miss a task! </h5>

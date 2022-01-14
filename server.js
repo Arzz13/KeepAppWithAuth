@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 //Connect node with data base atlas.
 
 mongoose.connect(
-    "mongodb+srv://Arshad:13may2001@keepappcluster.5uqgf.mongodb.net/keeperDB?retryWrites=true&w=majority", {
+    MONGOBD_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
 
@@ -44,8 +44,8 @@ const PORT=process.env.PORT || 4000; //when the application is running locally, 
 
 
 //---------------FOR DEPLOYMENT--------------------------------------------------------------------------------------
-
 /*
+
 if ( process.env.NODE_ENV == "production"){  //if production mode,then get from here 
     app.use(express.static("client/build"));
     const path = require("path");
